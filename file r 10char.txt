@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+    FILE* fp;
+    char ch[100];
+    fp = fopen("sample.txt","r");
+    if(fp == NULL){
+        perror("Error: ");
+        
+    }else{
+        while(1){
+            fgets(ch,10,fp);
+            if(!feof(fp)){
+                printf("%s",ch);
+            }else{
+                break;
+            }
+        }
+    }
+    fclose(fp);
+    return 0;
+}

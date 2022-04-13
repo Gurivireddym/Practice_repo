@@ -1,0 +1,132 @@
+RPM Command in Linux
+--------------------
+
+RPM stands for Red Hat Package Manager. It is an open-source package manager (default) and the most famous utility of package management for Red Hat-based systems such as Fedora, CentOS, and RHEL.
+
+Modes of RPM Command:
+---------------------
+
+Install: This mode is used for installing the RPM packages.
+-------
+Remove: It is used for erasing, removing, or uninstalling the RPM packages.
+-------
+Upgrade: It is used for updating the available RPM packages.
+--------
+Verify: This mode is used for verifying the RPM packages.
+------
+Query: This mode is used for querying the RPM packages.
+------
+
+1. Install RPM in Linux
+-----------------------
+We can install the RPM package using the following command:
+
+$ sudo apt install rpm  
+
+2. Check the RPM Signature Package
+----------------------------------
+Before installing the packages on our Linux systems always check a PGP signature of them and ensure their origin and integrity are OK. We can use the below command using an option, i.e., -checksig (stands for check signature) for checking the package's signature which is known as a apacheds-2.0.0.AM26-i386.rpm.
+
+# rpm --checksig apacheds-2.0.0.AM26-i386.rpm  
+
+3. Check the RPM Package Dependency before installing
+-----------------------------------------------------
+
+Let's assume we wish to check the dependency of the RPM package before upgrading or installing a package. For example, we can use the below command for checking the dependency of a package, i.e., apacheds-2.0.0.AM26-i386.rpm. It will show the package dependencies list:
+
+# rpm -qpR apacheds-2.0.0.AM26-i386.rpm
+
+Where,
+
+-q: It is used for querying any package.
+-p: It is used for listing the capabilities that this package gives.
+-R: This option is used for listing the capabilities over which the package depends.
+
+4. Install the RPM Package without the Dependencies
+---------------------------------------------------
+If we know that every needed package is already installed and the RPM is only being stupid, then we can avoid the dependencies with the help of the -nodeps option (means no dependency check) before installing any package.
+
+The command is mentioned as follows:
+
+# rpm -ivh --nodeps apacheds-2.0.0.AM26-i386.rpm  
+
+5. Check the RPM Package (Installed)
+------------------------------------
+Using an option -q along with the package name will display whether the RPM package is installed or not.
+
+The command is as follows:
+
+# rpm -q apacheds-2.0.0.AM26-i386.rpm  
+
+
+6. List each file of the installed RPM package
+----------------------------------------------
+We can use the -ql option (query list) with the RPM command for viewing each file of the installed RPM package.
+
+The command is as follows:
+
+# rpm -ql apacheds-2.0.0.AM26-i386.rpm  
+
+7. List RPM Packages (Recently Installed)
+------------------------------------------
+We can apply the below command of RPM with an option, i.e., -qa (query all). This option will list every RPM package that is recently installed.
+
+# rpm -qa --last 
+
+8. List Each RPM Package (Installed)
+------------------------------------
+We can use the below command for printing each name of the package (installed) on our Linux system.
+
+# rpm -qa  
+
+9. Remove the RPM Package
+-------------------------
+For uninstalling or removing the RPM package, for instance, we can use the name of the package apacheds-2.0.0.AM26-i386.rpm, not the real name of the package apacheds-2.0.0.AM26-i386.rpm. In the following command, we are using an option, i.e., -e (erase) for removing the package.
+
+# rpm -evv apacheds-2.0.0.AM26-i386.rpm  
+
+10. Query the Details of RPM Package (Installed)
+------------------------------------------------
+Let's say we have installed any RPM package and we wish to know the details of the package. The below option, i.e., -qi (query info) will print the details of an installed package that are available.
+
+# rpm -qi apacheds-2.0.0.AM26-i386.rpm  
+
+
+11. Details of the RPM Package Before Installing
+------------------------------------------------
+We have downloaded any package using the Internet and we wish to know the details of this package before installing. The below -qip (query info package) option will print the details about the package.
+
+# rpm -qip apacheds-2.0.0.AM26-i386.rpm  
+
+
+12. Verify the RPM Package
+---------------------------
+Verify any package will compare the installed file's information of the package for the data of the RPM. The -Vp (verify package) option is used for verifying the packages.
+
+# rpm Vp apacheds-2.0.0.AM26-i386.rpm  
+
+to verify all rpm packages.
+
+#rpm -qa
+
+13. List Each imported GPG Key of RPM
+-------------------------------------
+We can use the below command for priting each imported GPG key in our system.
+
+$ sudo rpm -qa gpg-pubkey*  
+
+14. Upgrade a RPM Package:
+--------------------------
+to upgrade the package you need to run below command
+
+# rpm -Uvh package-name
+
+
+How to rebuild Correpted RPM Database:
+-------------------------------------
+Sometimes rpm database gets corrupted and stops all the functionality of rpm and other applications on the system. So, at the time we need to rebuild the rpm database and restore it with the help of following command.
+
+# cd /var/lib
+# rm __db*
+# rpm --rebuilddb
+# rpmdb_verify Packages

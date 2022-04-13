@@ -1,0 +1,73 @@
+Daemons:
+--------
+
+A daemon (also known as background processes) is a Linux or UNIX program that runs in the background. Almost all daemons have names that end with the letter "d". For example, httpd the daemon that handles the Apache server, or, sshd which handles SSH remote access connections..
+
+List of service daemons for Linux and Unix-like systems:
+--------------------------------------------------------
+
+amd 	- Auto Mount Daemon
+anacron - Executed delayed cron tasks at boot time
+apmd 	- Advanced Power Management Daemon
+atd 	- Runs jobs queued using the at tool
+autofs  - Supports the automounter daemon allowing mount and unmount of devices on demand
+crond   - The task scheduler daemon
+cupsd   - CUPS printer daemon
+dhcpd   - Dynamic Host Configuration Protocol and Internet Bootstrap Protocol Server
+ftpd    - FTP Server Daemon
+gated   - routing daemon that handles multiple routing protocols and replaces routed and egpup
+httpd   - Web Server Daemon
+inetd   - Internet Superserver Daemon
+imapd   - An imap server daemon
+lpd     - Line Printer Daemon
+memcached - In-memory distributed object caching daemon
+mountd    - mount daemon
+mysql 	  - Database server daemon
+named     - A DNS server daemon
+nfsd 	  - Network File Sharing Daemon
+nfslock   - Used to start and stop nfs file locking services
+nmbd	  - Network Message Block Daemon
+ntpd 	  - Network Time Protocol service daemon
+postfix   - A mail transport agent used as a replacement for sendmail
+postgresql - Database server daemon
+routed 	   - Manages routing tables
+rpcbind	   - Remote Procedure Call Bind Daemon
+sendmail   - A mail transfer agent Daemon
+smbd 	   - Samba (an SMB Server) Daemon
+smtpd      - Simple Mail Transfer Protocol Daemon
+snmpd 	   - Simple Network Management Protocol Daemon
+squid      - A web page caching proxy server daemon
+sshd 	   - Secure Shell Server Daemon
+syncd	   - Keeps the file systems synchronized with system memory
+syslogd    - System logging daemon
+tcpd 	   - Service wrapper restricts access to inetd based services through hosts.allow and hosts.deny
+telnetd    - Telnet Server daemon
+vsftpd     - Very Secure FTP Daemon
+webmin     - Web based administration server daemon
+xinetd     - Enhanced Internet Superserver Daemon
+xntd       - Network Time Server Daemon
+
+
+How do I start / stop / restart daemons for the shell prompt
+------------------------------------------------------------
+You need to use the service command as follows::
+
+service daemon-name-here start
+service daemon-name-here stop
+service daemon-name-here restart
+
+
+Example:
+--------
+
+service httpd start
+service httpd stop
+service httpd restart
+
+
+How do I see list of all running daemons?
+-----------------------------------------
+
+To see the status all installed daemons, enter:
+
+service --status-all

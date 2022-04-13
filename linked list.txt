@@ -1,0 +1,172 @@
+#include<stdio.h>
+#include<stdlib.h>
+void creation();
+void insert();
+void deletion();
+void show();
+void modify();
+void search();
+int main(){
+    int option;
+     while(1){
+    printf("\n1.creation \t 2. insertion \t 3.deletion \t 4. show\t 5.modify \t 6.search \t7.exit");
+    printf("\nenter a option to do respective operation: ");
+    scanf("%d",&option);
+   
+    switch(option){
+        case 1 : creation();
+                break;
+        case 2 : insert();
+                break;
+        case 3 : deletion();
+                break;
+        case 4 : show();
+                break;
+        case 5 : modify();
+                break;
+        case 6 : search();
+                break;
+        case 7 :exit(1);
+    }
+    }
+    
+}
+typedef struct Node{
+    int data;
+    struct Node *next;
+    
+}Node;
+struct Node *head = NULL;
+struct Node *tail = NULL;
+void creation(){
+    struct Node* crt;
+    crt = (Node*)malloc(sizeof(Node));
+    scanf("%d",&crt->data);
+    crt->next = NULL;
+    if(head == NULL){
+        head = crt;
+        tail = crt;
+    }else{
+        tail->next = crt;
+        tail = tail->next;
+    }
+}
+void insert(){
+    int after;
+    printf("enter a value to insert after that value: ");
+    scanf("%d",&after);
+    if(head == NULL){
+        printf("list is empty");
+        
+    }
+    struct Node *itr = head, *crt;
+    while(itr != NULL){
+        if(itr->data == after){
+            crt = (Node*)malloc(sizeof(Node));
+            scanf("%d",&crt->data);
+            crt->next = itr->next;
+            itr->next = crt;
+        }
+            if(crt->next = NULL){
+                tail = crt;
+                //return 0;
+               
+        }else{
+                itr = itr->next;
+            }
+    }
+    //printf("data not found");
+}
+void show(){
+    struct Node *itr = head;
+    if(head == NULL){
+        printf("list is empty");
+        
+    }else{
+        while(itr != NULL){
+            printf("%d\t",itr->data);
+            itr=itr->next;
+            //return 0;
+        }
+    }
+}
+void deletion(){
+    int deldata;
+    scanf("%d",&deldata);
+    if(head == NULL){
+        printf("list is empty");
+        
+    }
+    struct Node *del;
+    struct Node *itr;
+    if(deldata == head->data){
+        del = head;
+        head = head -> next;
+        free(del);
+        del=NULL;
+        
+    }
+    itr = head;
+    while(itr->next != NULL){
+        if(itr -> next -> data == deldata){
+            del = itr->next;
+            itr->next = del->next;
+            free(del);
+            if(itr->next ==NULL){
+                tail = itr;
+                
+            }else{
+                itr=itr->next;
+            }
+        }
+    }
+}
+void search(){
+    int selem;
+    printf("enter a search element to search: ");
+    scanf("%d",&selem);
+    if(head == NULL){
+        printf("list is empty");
+    }
+    Node *s, *itr;
+    if(selem == head->data){
+        printf("search element is avilable i n list: ");
+    }
+    itr = head;
+    while(itr->next != NULL){
+        if(itr->next->data==selem){
+            printf("search element is avilable in list: ");
+            
+        }else{
+            itr=itr->next;
+        }
+    }
+    
+}
+void modify(){
+    int a,b;
+    Node *itr;
+    printf("enter a value which is in our list to replace: ");
+    scanf("%d",&a);
+    printf("enter a value to update: ");
+    scanf("%d",&b);
+    if(head == NULL){
+        printf("list is empty");
+    }
+    if(a==head->data){
+        printf("valid input");
+    }
+    if(a==head->data){
+        head->data = b;
+        
+    }
+    itr = head;
+    while(itr->next != NULL){
+        if(itr->next->data == a){
+            itr->next->data = b;
+        }else{
+            itr=itr->next;
+        }
+    }
+}
+

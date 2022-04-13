@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+struct Emp{
+    char name[24];
+    int sapid;
+    int basicsal;
+    float hra,da,pf,epf;
+    float gross,net;
+};
+    struct Emp emp;
+    int n;
+    scanf("%d",&n);
+    //emp = (struct Emp*)malloc(n,sizeof(struct Emp));
+    scanf("%s",emp.name);
+    scanf("%d",&emp.sapid);
+    scanf("%d",&emp.basicsal);
+    
+    emp.hra=(emp.basicsal)*0.5;
+    emp.da=(emp.basicsal)*0.1;
+    emp.pf=(emp.basicsal)*0.08;
+    emp.epf=(emp.basicsal)*0.12;
+    emp.gross=emp.basicsal+emp.hra+emp.da+emp.epf;
+    emp.net=emp.gross-emp.pf;
+    printf("employee name%s ",emp.name);
+    printf("\nSapID%d ",emp.sapid);
+    printf("\nBasic salary%d ",emp.basicsal);
+    printf("\nHra:%f DA:%f pf:%f epf:%f gross sal:%f netsal:%f",emp.hra,emp.da,emp.pf,emp.epf,emp.gross,emp.net);
+    return 0;
+}

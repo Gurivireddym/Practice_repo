@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    FILE *fp;
+    int ch;
+    fp = fopen("sample.txt","w");
+    char name[100];
+    int age;
+    scanf("%d %s %d",&ch,name,&age);
+    fprintf(fp,"%d\n%s\n%d",ch,name,age);
+   
+    fclose(fp);
+    return 0;
+}

@@ -1,0 +1,25 @@
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char* myname(){
+    char* name;
+    int n;
+    scanf("%d",&n);
+    name=(char*)calloc(n,sizeof(char));
+    scanf("%s",name);
+    return name;
+}
+void greet(char* fptr()){
+    char grt[20];
+    scanf("%s",grt);
+    char* name = fptr();
+    for(int i = 0; i<=strlen(name); i++){
+        name[i] = toupper(name[i]);
+    }
+    printf("%s ,%s",grt,name);
+}
+int main(){
+    greet(myname);
+}

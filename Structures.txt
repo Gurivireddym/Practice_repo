@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct employee{
+	char name[20];
+	int sapid;
+	int basicsal;
+}employee;
+
+int main(){
+employee* emp;
+int n;
+printf("enter number of employee details you want to store: ");
+scanf("%d",&n);
+emp =(employee*)calloc(n,sizeof(employee));
+
+for(int i=0;i<n;i++){
+	printf("name: ");
+	scanf("%s",(emp+i)->name);
+	printf("sapid: ");
+	scanf("%d",&emp[i].sapid);
+	printf("basicsal: ");
+	scanf("%d",&emp[i].basicsal);
+}
+printf("\nOutput:\n");
+for(int i=0;i<n;i++){
+    
+	printf("name: %s\nsapid: %d\nbasicsal: %d",emp[i].name,emp[i].sapid,emp[i].basicsal);
+}
+}

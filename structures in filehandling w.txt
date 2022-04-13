@@ -1,0 +1,27 @@
+#include<stdio.h>
+typedef struct employee {
+    char ename[24];
+    int sapid;
+    int basicsal;
+}emp;
+
+int main(){
+    emp emp[100];
+    int n;
+    printf("number of employee details you want to store: ");
+    scanf("%d",&n);
+    FILE* fp;
+    
+    fp = fopen("sample.txt","w");
+    for(int i=0;i<n;i++){
+        printf("enter employee name: ");
+        scanf("%s",emp[i].ename);
+        printf("enter employee sap id: ");
+        scanf("%d",&emp[i].sapid);
+        printf("enter employee basicsal: ");
+        scanf("%d",&emp[i].basicsal);
+    }
+    fwrite(emp,sizeof(struct employee),n,fp);
+    fclose(fp);
+    return 0;
+}

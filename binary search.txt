@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[10];
+    int search,n,start,end,mid;
+    scanf("%d",&n);
+    for (int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    } 
+    for(int i=0 ; i<n-1 ; i++){
+        for(int j=i+1 ; j<n; j++){
+            if(arr[i]>arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    for(int i = 0 ; i < n; i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\nEnter a search element");
+    scanf("%d",&search);
+    start=0;
+    end =n;
+    mid=(start+end)/2;
+    if(search>arr[mid]){
+        for(start=mid+1; start<end; start++){
+            if(search==arr[start]){
+                printf("\n%d is placed on %d position",search,start);
+            }
+        }
+    }else if(search<arr[mid]){
+        for(start=0;start<mid; start++){
+            printf("\n%d is placed on %d position",search,start);
+        }
+    }else{
+        printf("\n%d is placed on %d position",search,mid);
+    }
+    return 0;
+}

@@ -1,0 +1,11 @@
+def Anogram_check(string1, string2):
+    
+    if(sorted(string1) == sorted(string2)):
+        print("YES")
+    else:
+        print("NO")
+
+
+string1 =input()
+string2 =input()
+Anogram_check(string1, string2)

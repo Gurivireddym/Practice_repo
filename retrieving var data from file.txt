@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+    FILE *fp;
+    int ch;
+    fp = fopen("sample.txt","r");
+    char name[100];
+    int age;
+    
+    if(fp == NULL){
+        perror("Error: ");
+        
+    }else{
+        while((ch=getchar()) != '*'){
+            
+            fscanf(fp,"%d %s %d",&ch,name,&age);
+            printf("%d\n%s\n%d",ch,name,age);
+        }
+    }
+    fclose(fp);
+    return 0;
+}
