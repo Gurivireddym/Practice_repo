@@ -11,3 +11,4 @@ RPM		 --- https://www.tecmint.com/20-practical-examples-of-rpm-commands-in-linux
 CURL		 --- https://reqbin.com/req/c-lfozgltr/curl-https-request
 
 python novice to pythonista  ---https://share.percipio.com/cd/NZaF7VaBK
+Kubernet	--- https://www.golinuxcloud.com/steps-to-expose-services-using-kubernetes-ingress/
