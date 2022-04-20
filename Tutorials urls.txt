@@ -2,7 +2,7 @@ Docker tutorial  --- https://tecadmin.net/tutorial/docker/docker-dockerfile/
 		 --- https://docker-curriculum.com/
 
 Daemon		 --- https://www.javatpoint.com/linux-daemon
-Postgresql	 --- https://www.digitalocean.com/community/tutorials/how-to-use-a-postgresql-database-in-a-			flask-application?msclkid=6e83d255befc11ec947b875dcceb7bcb
+Postgresql	 --- https://www.digitalocean.com/community/tutorials/how-to-use-a-postgresql-database-in-a-flask-application?msclkid=6e83d255befc11ec947b875dcceb7bcb
 
 Wget		 --- https://www.geeksforgeeks.org/wget-command-in-linux-unix/#:~:text=%20Wget%20command%20in%20Linux%2FUnix%20%201%20GNU,download%20fails%20due%20to%20a%20network...%20More%20?msclkid=438264d0ba4711ecb2a658029cdb0aba
 
